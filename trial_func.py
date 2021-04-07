@@ -37,7 +37,10 @@ def trial(i, win, df, clk, txt):
     }
     loc = [-1,1]
     np.random.shuffle(loc)
-    txt.text = "%s%%，%s元 \n %s%%，%s元" % (int(100 * p), int(x), 100 - int(100 * p), int(y))
+    #txt.text = "%s%%，%s元 \n %s%%，%s元" % (int(100 * p), int(x), 100 - int(100 * p), int(y))
+    txt.text = '{:>2d}%, {:>3d}元\n{:>2d}%, {:>3d}元'.format(int(100 * p), int(x), 100 - int(100 * p), int(y))
+
+    # txt.text = "%s%%，%s元" % (int(100 * p), int(x))
     txt.pos = (0.2*loc[0]*w, 0)
     txt.draw()
     if sure-int(sure)!= 0:
@@ -66,7 +69,9 @@ def trial(i, win, df, clk, txt):
         txt.draw()
         win.flip()
         core.wait(0.5)
-        txt.text = "%s%%，%s元 \n %s%%，%s元" % (int(100 * p), int(x), 100 - int(100 * p), int(y))
+        # txt.text = "%s%%，%s元 \n %s%%，%s元" % (int(100 * p), int(x), 100 - int(100 * p), int(y))
+        txt.text = '{:>2d}%, {:>3d}元\n{:>2d}%, {:>3d}元'.format(int(100 * p), int(x), 100 - int(100 * p), int(y))
+        # txt.text = "%s%%，%s元" % (int(100 * p), int(x))
         txt.pos = (0.2 * loc[0] * w, 0)
         txt.draw()
         txt.text = "%s元" % sure_t
